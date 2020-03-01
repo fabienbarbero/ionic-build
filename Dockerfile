@@ -7,7 +7,6 @@
 
 FROM node:alpine
 
-RUN npm install --global yarn && \
-    yarn global add ionic capacitor && \
+RUN yarn global add ionic capacitor && \
     npm link @angular/cli && \
     ng config -g cli.packageManager yarn
