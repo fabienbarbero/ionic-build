@@ -13,7 +13,7 @@ build:
   image: fabar/ionic-build
   stage: build
   script:
-    - npm install
+    - npm ci
     - ionic build --no-interactive --confirm
   artifacts:
     paths:

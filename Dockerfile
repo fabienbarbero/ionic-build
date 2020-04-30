@@ -7,6 +7,6 @@
 
 FROM node:lts-slim
 
-RUN yarn global add @ionic/cli capacitor @angular-devkit/build-angular --dev && \
+RUN apt update && apt install -y python3 && node --version && yarn global add @ionic/cli capacitor @angular-devkit/build-angular --dev && \
     npm link @angular/cli && \
     ng config -g cli.packageManager yarn
