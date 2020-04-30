@@ -5,8 +5,8 @@
 # - docker build -t registry.gitlab.com/short-circuit-group/short-circuit-client/ionic -f Dockerfile-ionic .
 # - docker push registry.gitlab.com/short-circuit-group/short-circuit-client/ionic
 
-FROM node:lts-slim
+FROM node:lts
 
-RUN apt update && apt install -y python3 && node --version && yarn global add @ionic/cli capacitor @angular-devkit/build-angular --dev && \
+RUN node --version && yarn global add @ionic/cli capacitor @angular-devkit/build-angular --dev && \
     npm link @angular/cli && \
     ng config -g cli.packageManager yarn

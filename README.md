@@ -13,8 +13,12 @@ build:
   image: fabar/ionic-build
   stage: build
   script:
-    - npm ci
+    - npm ci --cache .npm --prefer-offline
     - ionic build --no-interactive --confirm
+  cache:
+    paths:
+      - node_modules
+      - .npm
   artifacts:
     paths:
       - www
